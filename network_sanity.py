@@ -30,7 +30,6 @@ def connect(ssid_name,pawd):
 
 
 ssid_name = input("what ssid do you want to bind to? ")
-print("what is the Auth key? ",end='')
 pawd = getpass.getpass()
 avoid_ssid= input("What SSIDs would you rather not connect to? (Enter space separated names or leave blank)").split(' ')
 
