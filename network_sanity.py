@@ -33,9 +33,9 @@ ssid_name = input("what ssid do you want to bind to? ")
 pawd = getpass.getpass()
 avoid_ssid= input("What SSIDs would you rather not connect to? (Enter space separated names or leave blank)").split(' ')
 
-
 subprocess.call('netsh interface set interface "Wi-Fi" enable', shell=True)
 print("Enabled Wifi")
+print("Guard active")
 while(True):
     connectionAt= subprocess.check_output("netsh wlan show interfaces")
     if probe(ssid_name) and (iface.status() != const.IFACE_CONNECTED or bytes(ssid_name,'ascii') not in \
@@ -44,7 +44,8 @@ while(True):
             continue
         connect(ssid_name,pawd)
     elif bytes('SSID','ascii') in connectionAt:
+
         for avoid in avoid_ssid:
-            if bytes(avoid,'ascii') in connectionAt:
+            if bytes(avoid,'ascii') in connectionAt and avoid!='':
                 iface.disconnect()
     
