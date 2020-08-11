@@ -1,6 +1,4 @@
 # networkSanity
-Network Sanity checker
-
 It happens often to me that my router Beacon packets are not transmitted by my router, thereby rendering my WiFi unavailable.
 In such cases my computer is quick to latch on to whatever open network it finds available. This clearly is dangerous as potentially malicious networks can keep their networks open and thus inviting victims.
 
